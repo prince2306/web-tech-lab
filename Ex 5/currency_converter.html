@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=9_TAk93wTixqVbFRx8smmmLVqo0B9AHMu7Jft3zDClR1J_9sWvtvqC9qT3TwlGgK9ZS8GzSndCXeCOQT35tm_yp6BkMLp6iEYGMToQUrt-UlZHThObAEUWILxzxploNFjFuskvfqDY_RnKnEs86Tb2IZNn2I02v_tJXOgNGehguOgPcnfaUeGF8lEafkYjx92SMlTqznCu1X2JscuoeACgBXMmfhiKNlUwUdtaXVZQ8QRCeA1W4X74qADMLRwnF5OyGeb48gHo5OE0S8UndJSkzrWeR5bK3AP5Tbjys8n19NglgrdgN5_EiOZPDw3kOjK2MBU5MY1WsrA-JZKqMZ581ZIizQr5OaWVwu8d2Wl_xNQxpD5-MtLyo5jJ_SInC-R9lOFQIarFOu51q5hkcqRgxYHtltv6K6Lwp5UFtMWVICCxGAYWxGu3fpAmsBNC2twCSysNHJ8weezYKZjPSMyE_77kjKERSPv5Z9Csx0bqSdtOgvCiN30qB464f5chmuldiiOBkIyy2CD02k7Ig10OhRDINMWI3SgLhC25vf-EIYZ4djGtbdYSX0QlMta8xngcJAfFPoAzd85RHNhFWZ_gWm6Pgdd7CWDVRMWQ8j-VQEAppB5ICEBMkgzG3GrmOfLH0b1iaRPQIWDDC2YNHF_VhWeHfIWCn7Z5juBq5a4lB42oE-ENfDksNUThUeDw6wep1mOugGGaFg_HAZwrRX7vf2jNkbWS4Aglv3ka0vd1m2HfVvD0bs1-A4RpSRM6zzGHFCZfrf-L01Tx-1Oden5LZ8SvGJwhJB6cpGSj87WwgVUL4SbTPGcWWcgn0rAkFehmS1b6BHei5eJs4hDRDymqVBlut3lscBbusV0mgiDpQ08pcPyFNoepQuXkAyR0bFiVzaXpI2N7xTKkj-TxOsZhF5eGLzP5g4bCD3HtNXCIMTRQPE88WUV9jOYsqbjjS4SHE0K9Ah5KBWsVXHR385MKLUVHUvNsYqcGrIGO3kRjjylvIbFTH1PrZVH8b5fceY59wyAxLhu6W4BSgJ63U19So5yN5smSlIbDdXX3Xuc7IULzz9JgGp-JRkFv6XKS2ygOeuniWK-4GAwdJ1r4AeCJLDAz4xvl2c8Jjh7lhBt_ATbhoNUKmN9yZNIhrDV_38NuDgIanI3hNBDf3NJ3x1Kk4zlOQdanFjI22HLS4Kzs4MR_NPNYBe2Wv2ym3X-qTwJ2tfJZbA1WYQCHmZtItJtpgGOLpXWO9_UQEjA977n3C6BX_aaUd0rur0fGfkdlp7CRliq6M1UKTBj_vjK0hr4JpVXTvqer0vyQVeIDbBzR4" nonce="8e934440ac585ebadcb5c97d4c4e3c9e" charset="UTF-8"></script><script>
+        function convert(){
+            var Amount= parseFloat(document.getElementById('Amount').value);
+            var From=document.getElementById('From').value;
+            var To=document.getElementById('To').value;
+          
+         
+            switch(From){
+                case "INR":
+                switch(To){
+                    case "USD":Amount=0.013*Amount;
+                    break;
+                    case "YEN":Amount=1.74*Amount;
+                    break;
+                }
+                break;
+                case "USD":
+                switch(To){
+                    case "INR":Amount=79*Amount;
+                    break;
+                    case "YEN":Amount=138*Amount;
+                    break;
+                }
+                break;
+                case "YEN":
+                switch(To){
+                    case "INR":Amount=0.57*Amount;
+                    break;
+                    case "USD":Amount=0.0072*Amount;
+                    break;
+                    default: 
+                    break;
+                }
+                default:
+                    break;
+            }
+            
+            document.getElementById('result').innerHTML='AMOUNT = '+Amount;
+        }
+        </script>
+</head>
+<body width="50px" height="300px">
+    <fieldset style="color:blue; border-radius: 5px;">
+        <h1 align="center" style="color:blue;">Currency Converter</h1><br><br>
+        Amount:<br><input type="text" id ="Amount"onkeyup="convert()"><br><br>FROM<br>
+      
+    <select id="From" onchange="convert()" style="width:150px;">
+        <option>INR</option>
+        <option>USD</option>
+        <option>YEN</option>
+    </select><br><br>To:<br>
+    <select id="To" onchange="convert()"style="width:150px;">
+        <option>INR</option>
+        <option>USD</option>
+        <option>YEN</option>
+    </select><br><br>
+    <div align="center"id="result"style="color:white;font-size: 25px; background-color:blue; border-radius:10px;"></div><br>
+    </fieldset>
+    
+</body>
+</html>
